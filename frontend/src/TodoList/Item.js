@@ -1,16 +1,31 @@
+import config from '../config.js'
+import axios from 'axios'
 import React, { Component } from 'react'
 
 export default class extends Component {
   render() {
     const {parent} = this.props
     const {item} = this.props
+    const {state} = parent
 
     const toggleCompleted = (i) => {
-      const items = parent.state.items.data.map((item) => {
-        if (item.id === i.id){ item.completed = !item.completed }
-        return item
-      })
-      parent.setState({...parent.state, items: {...parent.state.items, data: items}})
+      axios.put(`${config.API_ENDPOINT}/item/${i.id}`,
+          {...item, completed: !item.completed}
+        )
+        .then((response) => {
+          parent.setState({
+            ...state,
+            items: {
+              ...state.items,
+              data: state.items.data.map((i) =>
+                i.id === response.data.id ? response.data : i
+              )
+            }
+          })
+        })
+        .catch((error) => {
+          console.log(error)
+        })
     }
 
     const className = (i) => {
