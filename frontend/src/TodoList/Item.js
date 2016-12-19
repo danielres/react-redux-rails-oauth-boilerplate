@@ -6,11 +6,11 @@ export default class extends Component {
     const {item} = this.props
 
     const toggleCompleted = (i) => {
-      const items = parent.state.items.map((item) => {
+      const items = parent.state.items.data.map((item) => {
         if (item.id === i.id){ item.completed = !item.completed }
         return item
       })
-      parent.setState({...parent.state, items})
+      parent.setState({...parent.state, items: {...parent.state.items, data: items}})
     }
 
     const className = (i) => {
