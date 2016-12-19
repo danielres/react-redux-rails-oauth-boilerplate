@@ -20,3 +20,11 @@
   color: gray;
 }
 
+.TodoList-Item-DestroyButton {
+  float: right;
+  visibility: hidden;
+}
+
+.TodoList-Item:hover .TodoList-Item-DestroyButton {
+  visibility: visible;
+}

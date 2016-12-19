@@ -28,6 +28,22 @@ export default class extends Component {
         })
     }
 
+    const destroyItem = (i) => {
+      axios.delete(`${config.API_ENDPOINT}/item/${i.id}`)
+        .then((response) => {
+          parent.setState({
+            ...state,
+            items: {
+              ...state.items,
+              data: state.items.data.filter((item)=> item.id !== response.data.id )
+            }
+          })
+        })
+        .catch((error) => {
+          console.log(error)
+        })
+    }
+
     const className = (i) => {
       var c = []
       c.push("TodoList-Item")
@@ -38,9 +54,19 @@ export default class extends Component {
     return (
       <li
         className={className(item)}
-        onClick={() => toggleCompleted(item)}
       >
-        {item.name}
+        <button
+          className="TodoList-Item-DestroyButton"
+          onClick={() => destroyItem(item)}
+        >
+          X
+        </button>
+
+        <div
+          onClick={() => toggleCompleted(item)}
+        >
+          {item.name}
+        </div>
       </li>
     )
   }
