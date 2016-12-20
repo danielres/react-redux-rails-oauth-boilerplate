@@ -1,10 +1,8 @@
-import config from './config.js'
-import axios from 'axios'
 import React, { Component } from 'react'
-
-import './TodoList.css'
+import { fetchItems } from './TodoList/actions'
 import Item from './TodoList/Item'
 import NewItem from './TodoList/NewItem'
+import './TodoList.css'
 
 export default class extends Component {
   constructor () {
@@ -20,16 +18,7 @@ export default class extends Component {
   }
 
   componentDidMount () {
-    axios.get(`${config.API_ENDPOINT}/items`)
-      .then((response) => {
-        this.setState({
-          ...this.state,
-          items: { ...this.state.items, loading: false, data: response.data}
-        })
-      })
-      .catch((error) => {
-        console.log(error)
-      })
+    fetchItems(this)
   }
 
   render() {
