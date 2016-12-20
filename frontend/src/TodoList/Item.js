@@ -62,9 +62,14 @@ export default class extends Component {
           X
         </button>
 
-        <div
+        <button
+          className="TodoList-Item-ToggleCompletedButton"
           onClick={() => toggleCompleted(item)}
         >
+          V
+        </button>
+
+        <div>
           {item.name}
         </div>
       </li>

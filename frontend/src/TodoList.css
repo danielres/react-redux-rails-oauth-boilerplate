@@ -10,7 +10,7 @@
 }
 
 .TodoList-Item {
-  background: #eee;
+  background: #ddd;
   margin-bottom: 10px;
   padding: 10px;
 }
@@ -18,13 +18,18 @@
 .TodoList-Item--completed {
   text-decoration: line-through;
   color: gray;
+  background: #f3f3f3;
 }
 
-.TodoList-Item-DestroyButton {
+.TodoList-Item-DestroyButton,
+.TodoList-Item-ToggleCompletedButton {
   float: right;
   visibility: hidden;
+  margin-left: 10px;
 }
 
-.TodoList-Item:hover .TodoList-Item-DestroyButton {
+.TodoList-Item:hover .TodoList-Item-DestroyButton,
+.TodoList-Item:hover .TodoList-Item-ToggleCompletedButton {
   visibility: visible;
 }
+
