@@ -13,7 +13,7 @@ export default class extends Component {
 
     const submitNew = (e) => {
       e.preventDefault()
-      if (parent.state.inputValue.length > 0) axios.post(`${config.API_ENDPOINT}/item`,
+      if (parent.state.inputValue.length > 0) axios.post(`${config.API_ENDPOINT}/items`,
           { id: setId(), name: parent.state.inputValue, position: setPosition(), completed: false}
         )
         .then((response) => {

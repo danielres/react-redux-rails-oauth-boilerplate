@@ -9,7 +9,7 @@ export default class extends Component {
     const {state} = parent
 
     const toggleCompleted = (i) => {
-      axios.put(`${config.API_ENDPOINT}/item/${i.id}`,
+      axios.put(`${config.API_ENDPOINT}/items/${i.id}`,
           {...item, completed: !item.completed}
         )
         .then((response) => {
@@ -29,7 +29,7 @@ export default class extends Component {
     }
 
     const destroyItem = (i) => {
-      axios.delete(`${config.API_ENDPOINT}/item/${i.id}`)
+      axios.delete(`${config.API_ENDPOINT}/items/${i.id}`)
         .then((response) => {
           parent.setState({
             ...state,

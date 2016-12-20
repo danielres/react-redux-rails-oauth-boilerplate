@@ -20,7 +20,7 @@ export default class extends Component {
   }
 
   componentDidMount () {
-    axios.get(`${config.API_ENDPOINT}/item`)
+    axios.get(`${config.API_ENDPOINT}/items`)
       .then((response) => {
         this.setState({
           ...this.state,
