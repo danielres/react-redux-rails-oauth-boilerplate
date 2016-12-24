@@ -1,20 +1,33 @@
 import React, { Component } from 'react'
-import { updateInputValue } from './actions'
-import { submitNew } from './actions'
 
 export default class extends Component {
   render() {
-    const {parent} = this.props
+    const {
+      NewItem,
+      updateNewItem,
+      createItem,
+    } = this.props
+
+    const value = NewItem.name
+
+    const onChange = (e) => {
+      updateNewItem({name: e.target.value})
+    }
+
+    const onClick = (e) => {
+      e.preventDefault()
+      createItem(NewItem)
+    }
 
     return(
       <form>
         <input
           type="text"
-          value={parent.state.inputValue}
-          onChange={(e) => updateInputValue(parent, e)}
+          value={value}
+          onChange={onChange}
         />
         <button
-          onClick={(e) => submitNew(parent, e)}
+          onClick={onClick}
         >
           ok
         </button>

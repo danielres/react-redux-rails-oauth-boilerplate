@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
-import { toggleCompleted } from './actions'
-import { destroyItem } from './actions'
 
 export default class extends Component {
   render() {
-    const {parent} = this.props
     const {item} = this.props
+    const {destroyItem} = this.props
+    const {updateItem} = this.props
+
+    const toggleCompleted = () =>
+      updateItem(item.id, {completed: !item.completed})
 
     const className = (i) => {
       var c = []
@@ -20,14 +22,14 @@ export default class extends Component {
       >
         <button
           className="TodoList-Item-DestroyButton"
-          onClick={() => destroyItem(parent, item)}
+          onClick={() => destroyItem(item.id)}
         >
           X
         </button>
 
         <button
           className="TodoList-Item-ToggleCompletedButton"
-          onClick={() => toggleCompleted(parent, item)}
+          onClick={toggleCompleted}
         >
           V
         </button>
