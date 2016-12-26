@@ -18,17 +18,14 @@ export default class extends Component {
           ? "Loading..."
           : <div>
               <ul>
-                {this.props.data
-                  .sort((a, b) => a.position - b.position)
-                  .map((item) =>
-                    <Item
-                      item={item}
-                      key={item.id}
-                      destroyItem={this.props.destroyItem}
-                      updateItem={this.props.updateItem}
-                    />
-                  )
-                }
+                {this.props.data.map((item) =>
+                  <Item
+                    item={item}
+                    key={item.id}
+                    destroyItem={this.props.destroyItem}
+                    updateItem={this.props.updateItem}
+                  />
+                )}
               </ul>
               <NewItem
                 NewItem={this.props.NewItem}

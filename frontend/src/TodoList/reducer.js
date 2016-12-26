@@ -1,8 +1,9 @@
-import * as actions from './actions'
+import { types as actions }   from './actions'
+import * as helpers from './helpers'
 
 export const initialState = {
   loading: false,
-  data: [],
+  data: {},
   NewItem: {
     name: ""
   },
@@ -19,7 +20,10 @@ export default function (state = initialState, action) {
       return {
         ...state,
         loading: false,
-        data: action.data,
+        data: {
+          ...state.data,
+          ...helpers.keyBy(action.data, 'id'),
+        },
       }
     case actions.LIST_FAILURE:
       return state
@@ -31,10 +35,10 @@ export default function (state = initialState, action) {
     case actions.CREATE_SUCCESS:
       return {
         ...state,
-        data: [
+        data: {
           ...state.data,
-          action.data,
-        ],
+          ...helpers.keyBy(action.data, 'id'),
+        },
         NewItem: {
           ...initialState.NewItem,
         }
@@ -44,12 +48,12 @@ export default function (state = initialState, action) {
     case actions.DESTROY_SUCCESS:
       return {
         ...state,
-        data: state.data.filter((item) => item.id !== action.data.id )
+        data: helpers.omit(state.data, action.data.id)
       }
     case actions.UPDATE_SUCCESS:
       return {
         ...state,
-        data: state.data.map((item) => item.id === action.data.id ? action.data : item)
+        data: helpers.replace(state.data, action.data.id, action.data)
       }
     case actions.UPDATE_FAILURE:
       return state
