@@ -42,3 +42,17 @@ describe('keyBy', () => {
     expect(helpers.keyBy(input, 'id')).toEqual(expected)
   })
 })
+
+describe('unKey', () => {
+  it('convert indexed hash map back to object array', () => {
+    const input = {
+      1: {id: 1, name: 'one'},
+      2: {id: 2, name: 'two'},
+    }
+    const expected = [
+      {id: 1, name: 'one'},
+      {id: 2, name: 'two'},
+    ]
+    expect(helpers.unKey(input)).toEqual(expected)
+  })
+})
