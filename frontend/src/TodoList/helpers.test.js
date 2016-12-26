@@ -41,6 +41,16 @@ describe('keyBy', () => {
     }
     expect(helpers.keyBy(input, 'id')).toEqual(expected)
   })
+  it('supports empty input', () => {
+    const input    = []
+    const expected = {}
+    expect(helpers.keyBy(input, 'id')).toEqual(expected)
+  })
+  it('supports undefined input', () => {
+    const input    = undefined
+    const expected = {}
+    expect(helpers.keyBy(input, 'id')).toEqual(expected)
+  })
 })
 
 describe('unKey', () => {

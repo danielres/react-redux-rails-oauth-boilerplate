@@ -1,5 +1,7 @@
-const makeArray = (e) =>
-  e.constructor === Array ? e : [e]
+const makeArray = (e) =>{
+  if (e === undefined) return []
+  return e.constructor === Array ? e : [e]
+}
 
 export const omit = (obj, key) =>
   Object
