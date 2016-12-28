@@ -1,7 +1,11 @@
-import { createStore } from 'redux'
-import { combineReducers } from 'redux'
+import {
+  compose,
+  createStore,
+  combineReducers,
+  applyMiddleware,
+} from 'redux'
+import thunk from 'redux-thunk'
 import TodoList from './TodoList/reducer'
-
 
 const rootReducer = combineReducers({
   TodoList,
@@ -11,5 +15,8 @@ const redux_webtools_browser_extension = window.__REDUX_DEVTOOLS_EXTENSION__ && 
 
 export default createStore(
   rootReducer,
-  redux_webtools_browser_extension
+  compose(
+    applyMiddleware(thunk),
+    redux_webtools_browser_extension,
+  )
 )
