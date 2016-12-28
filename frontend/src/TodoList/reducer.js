@@ -19,8 +19,6 @@ export default function (state = initialState, action) {
         set('loading', false),
         merge({data: keyBy('id', action.data)}),
       )(state)
-    case types.LIST_FAILURE:
-      return state
     case types.NEW_UPDATE:
       return set('NewItem', action.values)(state)
     case types.CREATE_SUCCESS:
