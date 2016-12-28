@@ -3,9 +3,6 @@ import Item from './Item'
 import NewItem from './NewItem'
 import './TodoList.css'
 
-// TODO: remove parent
-// TODO: sideload NewItem
-
 export default class extends Component {
   componentDidMount () {
     this.props.fetchTodoListItems()

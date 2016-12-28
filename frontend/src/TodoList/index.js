@@ -19,15 +19,15 @@ const mapStateToProps = (state) => (
   }
 )
 
-const mapDispatchToProps = (dispatch) =>({
-  ...bindActionCreators({
+const mapDispatchToProps = (dispatch) =>
+  bindActionCreators({
     fetchTodoListItems,
     createItem,
     destroyItem,
     updateItem,
-    updateNewItem
-  }, dispatch )
-})
+    updateNewItem,
+  }, dispatch)
+
 
 export default connect(
   mapStateToProps,
