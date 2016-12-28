@@ -20,11 +20,11 @@ const mapStateToProps = (state) => (
 )
 
 const mapDispatchToProps = (dispatch) =>({
-  fetchTodoListItems,
-  createItem,
-  destroyItem,
-  updateItem,
   ...bindActionCreators({
+    fetchTodoListItems,
+    createItem,
+    destroyItem,
+    updateItem,
     updateNewItem
   }, dispatch )
 })
