@@ -1,0 +1,16 @@
+exports[`test matches snapshot 1`] = `
+<li
+  className="TodoList-Item">
+  <button
+    className="TodoList-Item-DestroyButton"
+    onClick={[Function]}>
+    X
+  </button>
+  <button
+    className="TodoList-Item-ToggleCompletedButton"
+    onClick={[Function]}>
+    V
+  </button>
+  <div />
+</li>
+`;
