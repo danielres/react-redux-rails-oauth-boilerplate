@@ -1,13 +1,5 @@
 import * as helpers from './helpers'
 
-describe('replace', () => {
-  it('replaces an object value by key', () => {
-    const input    = {a: 'a', b: 'b'}
-    const expected = {a: 'a', b: 'BBB'}
-    expect(helpers.replace(input, 'b', 'BBB')).toEqual(expected)
-  })
-})
-
 describe('keyBy', () => {
   it('convert object array to hash map, indexed by an attribute value of the object', () => {
     const input    = [
