@@ -1,8 +1,7 @@
-import { takeLatest, delay } from 'redux-saga'
 import {
   put,
   call,
-  fork,
+  takeLatest,
 } from 'redux-saga/effects'
 import * as api from './api'
 import { types } from './actions'

@@ -1,6 +1,3 @@
-import config from '../config.js'
-import axios from 'axios'
-
 export const types = {
   LIST_REQUEST:      'TodoList/list/request',
   LIST_SUCCESS:      'TodoList/list/success',
