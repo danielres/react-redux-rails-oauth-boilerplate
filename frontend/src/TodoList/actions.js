@@ -26,43 +26,18 @@ export const updateNewItem = (values) => ({
   values,
 })
 
-export const createItem = (params) =>
-  (dispatch) => {
-    dispatch({type: types.CREATE_REQUEST, params})
-    axios.post(`${config.API_ENDPOINT}/items`, params)
-    .then(({data}) => {
-      dispatch({type: types.CREATE_SUCCESS, data})
-    })
-    .catch((error) => {
-      console.log(error)
-      // add TODOLISTITEM_CREATE_FAILURE
-    })
-  }
+export const createItem = (params) => ({
+  type: types.CREATE_REQUEST,
+  params,
+})
 
-export const destroyItem = (id) =>
-  (dispatch) => {
-    dispatch({type: types.DESTROY_REQUEST, id})
-    axios.delete(`${config.API_ENDPOINT}/items/${id}`)
-    .then(({data}) => {
-      dispatch({type: types.DESTROY_SUCCESS, data})
-    })
-    .catch((error) => {
-      console.log(error)
-      // add TODOLISTITEM_DESTROY_FAILURE
-    })
-  }
+export const destroyItem = (id) => ({
+  type: types.DESTROY_REQUEST,
+  id,
+})
 
-
-export const updateItem = (id, params) =>
-  (dispatch) => {
-    dispatch({type: types.UPDATE_REQUEST, id, params})
-    axios.put(`${config.API_ENDPOINT}/items/${id}`, params)
-    .then(({data}) => {
-      dispatch({type: types.UPDATE_SUCCESS, data})
-    })
-    .catch((error) => {
-      console.log({error})
-      // add TODOLISTITEM_UPDATE_FAILURE
-    })
-  }
-
+export const updateItem = (id, params) => ({
+  type: types.UPDATE_REQUEST,
+  id,
+  params,
+})
