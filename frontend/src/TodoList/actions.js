@@ -17,17 +17,9 @@ export const types = {
   UPDATE_FAILURE:    'TodoList/Item/update/failure',
 }
 
-export const fetchTodoListItems = () =>
-  (dispatch) => {
-    dispatch({type: types.LIST_REQUEST})
-    axios.get(`${config.API_ENDPOINT}/items`)
-      .then(({data}) => {
-        dispatch({type: types.LIST_SUCCESS, data})
-      })
-      .catch((error) => {
-        dispatch({type: types.LIST_FAILURE, error})
-      })
-  }
+export const fetchTodoListItems = () => ({
+  type: types.LIST_REQUEST,
+})
 
 export const updateNewItem = (values) => ({
   type: types.NEW_UPDATE,

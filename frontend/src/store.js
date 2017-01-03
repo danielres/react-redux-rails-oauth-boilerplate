@@ -4,19 +4,31 @@ import {
   combineReducers,
   applyMiddleware,
 } from 'redux'
-import thunk from 'redux-thunk'
+import createSagaMiddleware from 'redux-saga'
+import { fork } from 'redux-saga/effects'
 import TodoList from './TodoList/reducer'
+import TodoListSagas from './TodoList/sagas'
+
+const redux_webtools_browser_extension = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+
+const sagaMiddleware = createSagaMiddleware()
+
+function * rootSaga () {
+  yield fork(TodoListSagas)
+}
 
 const rootReducer = combineReducers({
   TodoList,
 })
 
-const redux_webtools_browser_extension = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-
-export default createStore(
+const store = createStore(
   rootReducer,
   compose(
-    applyMiddleware(thunk),
+    applyMiddleware(sagaMiddleware),
     redux_webtools_browser_extension,
   )
 )
+
+sagaMiddleware.run(rootSaga)
+
+export default store
