@@ -4,18 +4,12 @@ import {
   call,
   fork,
 } from 'redux-saga/effects'
-import axios from 'axios'
-import config from '../config.js'
+import * as api from './api'
 import { types } from './actions'
 
-const Api = {
-  fetchTodoListItems: () =>
-    axios.get(`${config.API_ENDPOINT}/items`).then(({data}) => data)
-}
-
-function * fetchTodoListItems(action) {
+function * fetchItems() {
   try {
-    const data = yield call(Api.fetchTodoListItems)
+    const data = yield call(api.fetchItems)
     yield put({type: types.LIST_SUCCESS, data})
   } catch (error) {
     yield put({type: types.LIST_FAILURE, error})
@@ -23,5 +17,5 @@ function * fetchTodoListItems(action) {
 }
 
 export default function* watcher() {
-  yield takeLatest(types.LIST_REQUEST, fetchTodoListItems)
+  yield takeLatest(types.LIST_REQUEST, fetchItems)
 }
