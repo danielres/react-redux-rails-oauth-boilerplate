@@ -1,5 +1,3 @@
-import config from '../../config.js'
-
 let startId = 1
 
 let items = [
