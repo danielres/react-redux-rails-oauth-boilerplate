@@ -4423,6 +4423,10 @@ react-dom@^15.4.1:
     loose-envify "^1.1.0"
     object-assign "^4.1.0"
 
+react-facebook-login@^3.4.2:
+  version "3.4.2"
+  resolved "https://registry.yarnpkg.com/react-facebook-login/-/react-facebook-login-3.4.2.tgz#52c026ea65c5b36d85536c916cd8d9f4d9978745"
+
 react-overlays@^0.6.10:
   version "0.6.10"
   resolved "https://registry.yarnpkg.com/react-overlays/-/react-overlays-0.6.10.tgz#e7e52dad47f00a0fc784eb044428c3a9e874bfa3"
