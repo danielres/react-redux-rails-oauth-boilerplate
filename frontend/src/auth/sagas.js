@@ -9,6 +9,7 @@ import {
   receiveLogin,
   loginError,
   receiveLogout,
+  logoutError,
 } from './actions'
 
 function * loginUser(action) {
@@ -27,6 +28,7 @@ function * logoutUser() {
     localStorage.removeItem('id_token')
     yield put(receiveLogout())
   } catch (error) {
+    yield put(logoutError(error))
   }
 }
 

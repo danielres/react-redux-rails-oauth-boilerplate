@@ -40,4 +40,7 @@ export const receiveLogout = () => ({
   isAuthenticated: false,
 })
 
-
+export const logoutError = (message) => ({
+  type: types.LOGOUT_FAILURE,
+  message,
+})
