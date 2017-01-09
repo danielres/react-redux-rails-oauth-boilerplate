@@ -3,7 +3,7 @@ import {
   call,
   takeLatest,
 } from 'redux-saga/effects'
-import api from './api'
+import api from './api/'
 import {
   types,
   receiveLogin,

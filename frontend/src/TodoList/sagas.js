@@ -3,7 +3,7 @@ import {
   call,
   takeLatest,
 } from 'redux-saga/effects'
-import * as api from './api'
+import api from './api/'
 import { types } from './actions'
 
 function * fetchItems() {
