@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import TodoList from './TodoList/index'
 import Navbar from './Navbar/index'
-import FacebookLogin from './FacebookLogin/'
+import FacebookLoginButton from './fbAuth/FacebookLoginButton'
 
 class App extends Component {
   render() {
@@ -12,7 +12,7 @@ class App extends Component {
           className="container"
           style={{textAlign: 'center'}}
         >
-          <FacebookLogin />
+          <FacebookLoginButton />
         </div>
         <TodoList />
       </div>
