@@ -2,6 +2,7 @@ import { types } from './actions'
 
 const initialState = {
   isFetching: false,
+  isAuthenticated: false,
   user: {},
 }
 
@@ -17,6 +18,7 @@ export default function auth(state = initialState, action) {
         ...state,
         isFetching: false,
         user: action.user,
+        isAuthenticated: true,
       }
     case types.LOGOUT_SUCCESS:
       return {
