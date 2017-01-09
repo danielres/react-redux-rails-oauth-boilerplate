@@ -8,6 +8,7 @@ import createSagaMiddleware from 'redux-saga'
 import { fork } from 'redux-saga/effects'
 import TodoList from './TodoList/reducer'
 import auth from './auth/reducer'
+import fbAuth from './fbAuth/reducer'
 import TodoListSagas from './TodoList/sagas'
 import authSagas from './auth/sagas'
 
@@ -23,6 +24,7 @@ function * rootSaga () {
 const rootReducer = combineReducers({
   TodoList,
   auth,
+  fbAuth,
 })
 
 const store = createStore(
