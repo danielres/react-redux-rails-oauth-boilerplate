@@ -4,7 +4,7 @@ const config = {
     remoteMock: "http://585847f5b66f521200e755f7.mockapi.io",
   },
   apiTypes: {
-    TodoList:   "remoteMock",
+    TodoList:   "localMock",
     auth:       "localMock",
   }
 }
