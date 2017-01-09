@@ -6,7 +6,8 @@ const config = {
   apiTypes: {
     TodoList:   "localMock",
     auth:       "localMock",
-  }
+  },
+  facebookAppId: '228930450892810',
 }
 
 export default config
