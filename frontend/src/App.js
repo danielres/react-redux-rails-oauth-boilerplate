@@ -3,21 +3,43 @@ import TodoList from './TodoList/index'
 import Navbar from './Navbar/index'
 import FacebookLoginButton from './fbAuth/FacebookLoginButton/'
 
+import { connect } from 'react-redux'
+
 class App extends Component {
   render() {
+    const {
+      isAuthenticated,
+      user
+    } = this.props.fbAuth
+
     return (
       <div className="App">
         <Navbar />
-        <div
-          className="container"
-          style={{textAlign: 'center'}}
-        >
-          <FacebookLoginButton />
-        </div>
-        <TodoList />
+        { isAuthenticated
+          ? <div>
+              <div className="container text-center">
+                Welcome, {user.name} !
+              </div>
+              <TodoList />
+            </div>
+          : <div className="container text-center">
+              <FacebookLoginButton />
+            </div>
+        }
       </div>
     )
   }
 }
 
-export default App
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+  fbAuth: state.fbAuth,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+})
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App)
