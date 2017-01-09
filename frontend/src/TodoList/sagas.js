@@ -4,41 +4,51 @@ import {
   takeLatest,
 } from 'redux-saga/effects'
 import api from './api/'
-import { types } from './actions'
+import {
+  types,
+  receiveItems,
+  receiveItemsError,
+  createItemSuccess,
+  createItemError,
+  destroyItemSuccess,
+  destroyItemError,
+  updateItemSuccess,
+  updateItemError,
+} from './actions'
 
 function * fetchItems() {
   try {
     const data = yield call(api.fetchItems)
-    yield put({type: types.LIST_SUCCESS, data})
+    yield put(receiveItems(data))
   } catch (error) {
-    yield put({type: types.LIST_FAILURE, error})
+    yield put(receiveItemsError(error))
   }
 }
 
 function * createItem(action) {
   try {
     const data = yield call(api.createItem, action.params)
-    yield put({type: types.CREATE_SUCCESS, data})
+    yield put(createItemSuccess(data))
   } catch (error) {
-    yield put({type: types.CREATE_FAILURE, error})
+    yield put(createItemError(error))
   }
 }
 
 function * destroyItem(action) {
   try {
     const data = yield call(api.destroyItem, action.id)
-    yield put({type: types.DESTROY_SUCCESS, data})
+    yield put(destroyItemSuccess(data))
   } catch (error) {
-    yield put({type: types.DESTROY_FAILURE, error})
+    yield put(destroyItemError(error))
   }
 }
 
 function * updateItem(action) {
   try {
     const data = yield call(api.updateItem, action.id, action.params)
-    yield put({type: types.UPDATE_SUCCESS, data})
+    yield put(updateItemSuccess(data))
   } catch (error) {
-    yield put({type: types.UPDATE_FAILURE, error})
+    yield put(updateItemError(error))
   }
 }
 
