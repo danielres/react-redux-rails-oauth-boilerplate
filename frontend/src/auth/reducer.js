@@ -1,7 +1,7 @@
 import { types } from './actions'
 import localStorage from '../compat/localStorage'
 
-const initialState = {
+export const initialState = {
   isFetching: false,
   isAuthenticated: localStorage.getItem('id_token') ? true : false,
 }
