@@ -1,3 +1,4 @@
+import localStorage from '../compat/localStorage'
 import {
   put,
   call,
