@@ -7,10 +7,8 @@ import {
 import createSagaMiddleware from 'redux-saga'
 import { fork } from 'redux-saga/effects'
 import TodoList from './TodoList/reducer'
-import auth from './auth/reducer'
 import fbAuth from './fbAuth/reducer'
 import TodoListSagas from './TodoList/sagas'
-import authSagas from './auth/sagas'
 
 const redux_webtools_browser_extension = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 
@@ -18,12 +16,10 @@ const sagaMiddleware = createSagaMiddleware()
 
 function * rootSaga () {
   yield fork(TodoListSagas)
-  yield fork(authSagas)
 }
 
 const rootReducer = combineReducers({
   TodoList,
-  auth,
   fbAuth,
 })
 
