@@ -4,7 +4,6 @@ import FacebookLoginButton from './FacebookLoginButton'
 import {
   requestLogin,
   receiveLogin,
-  logoutUser,
 } from '../actions'
 
 const mapStateToProps = (state) => (
@@ -17,7 +16,6 @@ const mapDispatchToProps = (dispatch) =>
   bindActionCreators({
     requestLogin,
     receiveLogin,
-    logoutUser,
   }, dispatch)
 
 
