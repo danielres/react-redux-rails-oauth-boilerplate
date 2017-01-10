@@ -6,11 +6,8 @@ import {
   receiveLogin,
 } from '../actions'
 
-const mapStateToProps = (state) => (
-  {
-    isAuthenticated: state.fbAuth.isAuthenticated,
-  }
-)
+const mapStateToProps = (state) => ({
+})
 
 const mapDispatchToProps = (dispatch) =>
   bindActionCreators({
