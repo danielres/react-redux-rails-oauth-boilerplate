@@ -6,14 +6,10 @@ export const types = {
 
 export const requestLogin = () => ({
   type: types.LOGIN_REQUEST,
-  isFetching: true,
-  isAuthenticated: false,
 })
 
 export const receiveLogin = (user) => ({
   type: types.LOGIN_SUCCESS,
-  isFetching: false,
-  isAuthenticated: true,
   user,
 })
 
