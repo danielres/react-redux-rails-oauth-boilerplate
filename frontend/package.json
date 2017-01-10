@@ -6,7 +6,8 @@
     "enzyme": "^2.7.0",
     "react-addons-test-utils": "^15.4.1",
     "react-scripts": "0.8.4",
-    "react-test-renderer": "^15.4.1"
+    "react-test-renderer": "^15.4.1",
+    "redux-saga-tester": "^1.0.112"
   },
   "dependencies": {
     "axios": "^0.15.3",
