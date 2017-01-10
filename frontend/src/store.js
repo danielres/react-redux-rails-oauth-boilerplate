@@ -23,13 +23,18 @@ const rootReducer = combineReducers({
   fbAuth,
 })
 
+const persistedState = localStorage.getItem('reduxState') ? JSON.parse(localStorage.getItem('reduxState')) : {}
+
 const store = createStore(
   rootReducer,
+  persistedState,
   compose(
     applyMiddleware(sagaMiddleware),
     redux_webtools_browser_extension,
   )
 )
+
+store.subscribe(() => localStorage.setItem('reduxState', JSON.stringify(store.getState())))
 
 sagaMiddleware.run(rootSaga)
 
