@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import TodoList from './TodoList/index'
 import Navbar from './Navbar/index'
 import FacebookLoginButton from './fbAuth/FacebookLoginButton/'
+import FacebookLogoutButton from './fbAuth/FacebookLogoutButton/'
 
 import { connect } from 'react-redux'
 
@@ -19,6 +20,9 @@ export class App extends Component {
           ? <div>
               <div className="container text-center">
                 Welcome, {user.name} !
+                <div>
+                  <FacebookLogoutButton />
+                </div>
               </div>
               <TodoList />
             </div>

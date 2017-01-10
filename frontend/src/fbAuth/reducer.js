@@ -20,10 +20,8 @@ export default function auth(state = initialState, action) {
         user: action.user,
         isAuthenticated: true,
       }
-    case types.LOGOUT_SUCCESS:
-      return {
-        ...initialState,
-      }
+    case types.LOGOUT:
+      return initialState
     default:
       return state
   }

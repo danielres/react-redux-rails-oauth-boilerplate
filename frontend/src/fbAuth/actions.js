@@ -1,8 +1,7 @@
 export const types = {
   LOGIN_REQUEST:    'fbAuth/login/request',
   LOGIN_SUCCESS:    'fbAuth/login/success',
-  LOGOUT_REQUEST:   'fbAuth/logout/request',
-  LOGOUT_SUCCESS:   'fbAuth/logout/success',
+  LOGOUT:           'fbAuth/logout',
 }
 
 export const requestLogin = () => ({
@@ -18,14 +17,6 @@ export const receiveLogin = (user) => ({
   user,
 })
 
-export const logoutUser = () => ({
-  type: types.LOGOUT_REQUEST,
-  isFetching: true,
-  isAuthenticated: true,
-})
-
-export const receiveLogout = () => ({
-  type: types.LOGOUT_SUCCESS,
-  isFetching: false,
-  isAuthenticated: false,
+export const logout = () => ({
+  type: types.LOGOUT,
 })
