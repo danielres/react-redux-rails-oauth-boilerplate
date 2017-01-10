@@ -16,7 +16,7 @@ import {
 function * loginUser(action) {
   try {
     const user = yield call(api.login, action.creds)
-    localStorage.setItem('id_token', user.id_token)
+    call(localStorage.setItem, 'id_token', user.id_token)
     yield put(receiveLogin(user))
   } catch (error) {
     yield put(loginError(error))
@@ -26,7 +26,7 @@ function * loginUser(action) {
 function * logoutUser() {
   try {
     yield put(logoutUser())
-    localStorage.removeItem('id_token')
+    call (localStorage.removeItem, 'id_token')
     yield put(receiveLogout())
   } catch (error) {
     yield put(logoutError(error))
