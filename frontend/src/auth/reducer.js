@@ -1,4 +1,5 @@
 import { types } from './actions'
+import localStorage from '../compat/localStorage'
 
 const initialState = {
   isFetching: false,
