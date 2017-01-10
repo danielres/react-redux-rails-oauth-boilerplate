@@ -5,7 +5,7 @@ import FacebookLoginButton from './fbAuth/FacebookLoginButton/'
 
 import { connect } from 'react-redux'
 
-class App extends Component {
+export class App extends Component {
   render() {
     const {
       isAuthenticated,
