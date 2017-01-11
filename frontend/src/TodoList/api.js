@@ -1,7 +1,7 @@
 import axios from 'axios'
-import config from '../../config.js'
+import config from '../config.js'
 
-const apiUrl = config.apiUrls[config.apiTypes.TodoList]
+const {apiUrl} = config
 
 export const fetchItems = () =>
   axios
