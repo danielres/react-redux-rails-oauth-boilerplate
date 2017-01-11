@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import TodoList from './TodoList/index'
-import Navbar from './Navbar/index'
+import {Navbar } from 'react-bootstrap'
+import TopNavbar from './Navbar/'
+import TodoList from './TodoList/'
 import FacebookLoginButton from './fbAuth/FacebookLoginButton/'
 import FacebookLogoutButton from './fbAuth/FacebookLogoutButton/'
 
@@ -15,14 +16,17 @@ export class App extends Component {
 
     return (
       <div className="App">
-        <Navbar />
+        <TopNavbar>
+          { isAuthenticated &&
+            <Navbar.Form>
+              <FacebookLogoutButton />
+            </Navbar.Form>
+          }
+        </TopNavbar>
         { isAuthenticated
           ? <div>
               <div className="container text-center">
                 Welcome, {user.name} !
-                <div>
-                  <FacebookLogoutButton />
-                </div>
               </div>
               <TodoList />
             </div>

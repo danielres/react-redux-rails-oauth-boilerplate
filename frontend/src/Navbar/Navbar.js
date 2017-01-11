@@ -9,11 +9,12 @@ export default class _Navbar extends Component {
       <Navbar>
         <div className='container-fluid'>
           <Navbar.Brand>Yo!</Navbar.Brand>
+          {this.props.children}
         </div>
       </Navbar>
     )
   }
 }
-
 _Navbar.propTypes = {
+  children: React.PropTypes.node,
 }
