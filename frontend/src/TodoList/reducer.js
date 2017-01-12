@@ -17,7 +17,7 @@ export default function (state = initialState, action) {
     case types.LIST_SUCCESS:
       return flow(
         set('loading', false),
-        merge({data: keyBy('id', action.data)}),
+        set('data', keyBy('id', action.data)),
       )(state)
     case types.NEW_UPDATE:
       return set('NewItem', action.values)(state)
