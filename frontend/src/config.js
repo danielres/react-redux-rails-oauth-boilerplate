@@ -5,7 +5,7 @@ const env = runtimeEnv()
 const config = {
   apiUrl: env.REACT_APP_API_URL,
   apiMock: env.REACT_APP_API_MOCK,
-  facebookAppId: '228930450892810',
+  facebookAppId: env.REACT_APP_FACEBOOK_APP_ID,
 }
 
 export default config
