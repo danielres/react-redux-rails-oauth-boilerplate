@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Navbar } from 'react-bootstrap'
+import { Navbar } from 'react-bootstrap'
 import TopNavbar from './Navbar/'
 import TodoList from './TodoList/'
 import FacebookLoginButton from './fbAuth/FacebookLoginButton/'

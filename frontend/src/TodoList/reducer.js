@@ -24,7 +24,7 @@ export default function (state = initialState, action) {
     case types.CREATE_SUCCESS:
       return flow(
         set('NewItem', initialState.NewItem),
-        merge({data: h.keyBy(action.data, 'id')}),
+        merge({ data: h.keyBy(action.data, 'id') }),
       )(state)
     case types.DESTROY_SUCCESS:
       return unset(`data.${action.data.id}`)(state)

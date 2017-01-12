@@ -14,54 +14,54 @@ export const types = {
   UPDATE_FAILURE:    'TodoList/Item/update/failure',
 }
 
-export const fetchTodoListItems = () => ({
-  type: types.LIST_REQUEST,
-})
+export const fetchTodoListItems = () => (
+  { type: types.LIST_REQUEST }
+)
 
-export const receiveItems = (data) => ({
-  type: types.LIST_SUCCESS, data
-})
+export const receiveItems = (data) => (
+  { type: types.LIST_SUCCESS, data }
+)
 
-export const receiveItemsError = (error) => ({
-  type: types.LIST_FAILURE, error
-})
+export const receiveItemsError = (error) => (
+  { type: types.LIST_FAILURE, error }
+)
 
-export const updateNewItem = (values) => ({
-  type: types.NEW_UPDATE, values
-})
+export const updateNewItem = (values) => (
+  { type: types.NEW_UPDATE, values }
+)
 
-export const createItem = (params) => ({
-  type: types.CREATE_REQUEST, params
-})
+export const createItem = (params) => (
+  { type: types.CREATE_REQUEST, params }
+)
 
-export const createItemSuccess = (data) => ({
-  type: types.CREATE_SUCCESS, data
-})
+export const createItemSuccess = (data) => (
+  { type: types.CREATE_SUCCESS, data }
+)
 
-export const createItemError = (error) => ({
-  type: types.CREATE_FAILURE, error
-})
+export const createItemError = (error) => (
+  { type: types.CREATE_FAILURE, error }
+)
 
-export const destroyItem = (id) => ({
-  type: types.DESTROY_REQUEST, id
-})
+export const destroyItem = (id) => (
+  { type: types.DESTROY_REQUEST, id }
+)
 
-export const destroyItemSuccess = (data) => ({
-  type: types.DESTROY_SUCCESS, data
-})
+export const destroyItemSuccess = (data) => (
+  { type: types.DESTROY_SUCCESS, data }
+)
 
-export const destroyItemError = (error) => ({
-  type: types.DESTROY_FAILURE, error
-})
+export const destroyItemError = (error) => (
+  { type: types.DESTROY_FAILURE, error }
+)
 
-export const updateItem = (id, params) => ({
-  type: types.UPDATE_REQUEST, id, params
-})
+export const updateItem = (id, params) => (
+  { type: types.UPDATE_REQUEST, id, params }
+)
 
-export const updateItemSuccess = (data) => ({
-  type: types.UPDATE_SUCCESS, data
-})
+export const updateItemSuccess = (data) => (
+  { type: types.UPDATE_SUCCESS, data }
+)
 
-export const updateItemError = (error) => ({
-  type: types.UPDATE_FAILURE, error
-})
+export const updateItemError = (error) => (
+  { type: types.UPDATE_FAILURE, error }
+)

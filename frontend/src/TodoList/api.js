@@ -2,7 +2,7 @@ import axios from 'axios'
 import config from '../config.js'
 import apiMock from './api.mock'
 
-const {apiUrl} = config
+const { apiUrl } = config
 
 if (config.apiMock) {
   console.log('Api mock enabled for TodoList')
@@ -12,19 +12,19 @@ if (config.apiMock) {
 export const fetchItems = () =>
   axios
     .get(`${apiUrl}/items`)
-    .then(({data}) => data)
+    .then(({ data }) => data)
 
 export const createItem = (params) =>
   axios
     .post(`${apiUrl}/items`, params)
-    .then(({data}) => data)
+    .then(({ data }) => data)
 
 export const destroyItem = (id) =>
   axios
     .delete(`${apiUrl}/items/${id}`)
-    .then(({data}) => data)
+    .then(({ data }) => data)
 
 export const updateItem = (id, params) =>
   axios
     .put(`${apiUrl}/items/${id}`, params)
-    .then(({data}) => data)
+    .then(({ data }) => data)

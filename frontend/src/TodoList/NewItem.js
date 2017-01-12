@@ -11,7 +11,7 @@ export default class extends Component {
     const value = NewItem.name
 
     const onChange = (e) => {
-      updateNewItem({name: e.target.value})
+      updateNewItem({ name: e.target.value })
     }
 
     const onClick = (e) => {

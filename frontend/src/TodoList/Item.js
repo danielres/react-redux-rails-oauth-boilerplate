@@ -8,7 +8,7 @@ export default function (props) {
   } = props
 
   const toggleCompleted = () =>
-    updateItem(item.id, {completed: !item.completed})
+    updateItem(item.id, { completed: !item.completed })
 
   const className = (i) => {
     var c = []
