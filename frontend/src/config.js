@@ -1,6 +1,10 @@
+import runtimeEnv from '@mars/heroku-js-runtime-env'
+
+const env = runtimeEnv()
+
 const config = {
-  apiUrl: process.env.REACT_APP_API_URL,
-  apiMock: process.env.REACT_APP_API_MOCK,
+  apiUrl: env.REACT_APP_API_URL,
+  apiMock: env.REACT_APP_API_MOCK,
   facebookAppId: '228930450892810',
 }
 
