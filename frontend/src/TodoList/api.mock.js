@@ -1,10 +1,10 @@
 import url from 'url'
 import _ from 'lodash'
 import axios from 'axios'
-import adapter from 'axios-mock-adapter'
+import Adapter from 'axios-mock-adapter'
 
 export default () => {
-  const mock = new adapter(axios)
+  const mock = new Adapter(axios)
 
   let startId = 1
 

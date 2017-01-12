@@ -10,7 +10,7 @@ import TodoList from './TodoList/reducer'
 import fbAuth from './fbAuth/reducer'
 import TodoListSagas from './TodoList/sagas'
 
-const redux_webtools_browser_extension = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+const reduxWebtoolsBrowserExtension = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 
 const sagaMiddleware = createSagaMiddleware()
 
@@ -30,7 +30,7 @@ const store = createStore(
   persistedState,
   compose(
     applyMiddleware(sagaMiddleware),
-    redux_webtools_browser_extension,
+    reduxWebtoolsBrowserExtension,
   )
 )
 
