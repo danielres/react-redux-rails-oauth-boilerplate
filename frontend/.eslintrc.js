@@ -84,7 +84,11 @@ module.exports = {
     "no-labels": [2, { "allowLoop": false, "allowSwitch": false }],
     "no-lone-blocks": 2,
     "no-mixed-spaces-and-tabs": 2,
-    "no-multi-spaces": 2,
+    "no-multi-spaces": [1, {
+        "exceptions": {
+            "VariableDeclarator": true
+        }
+    }],
     "no-multi-str": 2,
     "no-multiple-empty-lines": [2, { "max": 1 }],
     "no-native-reassign": 2,
