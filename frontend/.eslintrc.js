@@ -45,7 +45,11 @@ module.exports = {
     "func-call-spacing": [2, "never"],
     "handle-callback-err": [2, "^(err|error)$" ],
     "indent": [2, 2, { "SwitchCase": 1 }],
-    "key-spacing": [2, { "beforeColon": false, "afterColon": true }],
+    "key-spacing":  ["error", {
+        "beforeColon": false,
+        "afterColon": true,
+        "mode": "minimum",
+    }],
     "keyword-spacing": [2, { "before": true, "after": true }],
     "new-cap": [2, { "newIsCap": true, "capIsNew": false }],
     "new-parens": 2,
@@ -155,7 +159,11 @@ module.exports = {
     "yield-star-spacing": [2, "both"],
     "yoda": [2, "never"],
 
-    "standard/object-curly-even-spacing": [2, "either"],
+    "object-curly-spacing": [2, "always", {
+        "arraysInObjects": false,
+        "objectsInObjects": false
+    }],
+    // "standard/object-curly-even-spacing": [2, "either"],
     "standard/array-bracket-even-spacing": [2, "either"],
     "standard/computed-property-even-spacing": [2, "even"],
 
