@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 export default class extends Component {
-  render() {
+  render () {
     const {
       NewItem,
       updateNewItem,
@@ -19,7 +19,7 @@ export default class extends Component {
       createItem(NewItem)
     }
 
-    return(
+    return (
       <form>
         <input
           type="text"

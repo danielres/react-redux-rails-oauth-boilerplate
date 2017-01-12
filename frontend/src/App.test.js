@@ -6,7 +6,7 @@ import FacebookLoginButton from './fbAuth/FacebookLoginButton/'
 
 describe('when user is authenticated', () => {
   it('renders a <TodoList /> component', () => {
-    const wrapper = shallow(<App fbAuth={{isAuthenticated: true, user: {name: "Tom"}}} />)
+    const wrapper = shallow(<App fbAuth={{isAuthenticated: true, user: {name: 'Tom'}}} />)
     expect(wrapper.find(TodoList).length).toEqual(1)
   })
 })

@@ -6,7 +6,7 @@ export const initialState = {
   loading: false,
   data: {},
   NewItem: {
-    name: ""
+    name: '',
   },
 }
 

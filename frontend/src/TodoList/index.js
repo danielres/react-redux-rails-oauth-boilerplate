@@ -10,12 +10,11 @@ import {
   updateItem,
 } from './actions'
 
-
 const mapStateToProps = (state) => (
   {
     loading: state.TodoList.loading,
     NewItem: state.TodoList.NewItem,
-    data: unKey(state.TodoList.data).sort((a, b) => a.position - b.position)
+    data: unKey(state.TodoList.data).sort((a, b) => a.position - b.position),
   }
 )
 
@@ -27,7 +26,6 @@ const mapDispatchToProps = (dispatch) =>
     updateItem,
     updateNewItem,
   }, dispatch)
-
 
 export default connect(
   mapStateToProps,

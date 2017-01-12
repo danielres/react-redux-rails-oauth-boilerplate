@@ -6,7 +6,7 @@ const initialState = {
   user: {},
 }
 
-export default function auth(state = initialState, action) {
+export default function auth (state = initialState, action) {
   switch (action.type) {
     case types.LOGIN_REQUEST:
       return {

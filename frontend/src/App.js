@@ -8,10 +8,10 @@ import FacebookLogoutButton from './fbAuth/FacebookLogoutButton/'
 import { connect } from 'react-redux'
 
 export class App extends Component {
-  render() {
+  render () {
     const {
       isAuthenticated,
-      user
+      user,
     } = this.props.fbAuth
 
     return (

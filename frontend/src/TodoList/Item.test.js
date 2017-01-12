@@ -9,4 +9,3 @@ it('matches snapshot', () => {
   expect(tree).toMatchSnapshot()
 })
 
-

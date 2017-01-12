@@ -16,7 +16,7 @@ import {
   updateItemError,
 } from './actions'
 
-function * fetchItems() {
+function * fetchItems () {
   try {
     const data = yield call(api.fetchItems)
     yield put(receiveItems(data))
@@ -25,7 +25,7 @@ function * fetchItems() {
   }
 }
 
-function * createItem(action) {
+function * createItem (action) {
   try {
     const data = yield call(api.createItem, action.params)
     yield put(createItemSuccess(data))
@@ -34,7 +34,7 @@ function * createItem(action) {
   }
 }
 
-function * destroyItem(action) {
+function * destroyItem (action) {
   try {
     const data = yield call(api.destroyItem, action.id)
     yield put(destroyItemSuccess(data))
@@ -43,7 +43,7 @@ function * destroyItem(action) {
   }
 }
 
-function * updateItem(action) {
+function * updateItem (action) {
   try {
     const data = yield call(api.updateItem, action.id, action.params)
     yield put(updateItemSuccess(data))
@@ -52,7 +52,7 @@ function * updateItem(action) {
   }
 }
 
-export default function* watcher() {
+export default function* watcher () {
   yield takeLatest(types.LIST_REQUEST, fetchItems)
   yield takeLatest(types.CREATE_REQUEST, createItem)
   yield takeLatest(types.DESTROY_REQUEST, destroyItem)

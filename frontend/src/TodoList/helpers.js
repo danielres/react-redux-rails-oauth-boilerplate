@@ -1,4 +1,4 @@
-const makeArray = (e) =>{
+const makeArray = (e) => {
   if (e === undefined) return []
   return e.constructor === Array ? e : [e]
 }

@@ -15,7 +15,6 @@ const mapDispatchToProps = (dispatch) =>
     receiveLogin,
   }, dispatch)
 
-
 export default connect(
   mapStateToProps,
   mapDispatchToProps

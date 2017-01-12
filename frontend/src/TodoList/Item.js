@@ -12,9 +12,9 @@ export default function (props) {
 
   const className = (i) => {
     var c = []
-    c.push("TodoList-Item")
-    if (i.completed) c.push("TodoList-Item--completed")
-    return c.join(" ")
+    c.push('TodoList-Item')
+    if (i.completed) c.push('TodoList-Item--completed')
+    return c.join(' ')
   }
 
   return (

@@ -8,11 +8,11 @@ export default class extends Component {
     this.props.fetchTodoListItems()
   }
 
-  render() {
+  render () {
     return (
       <div className="TodoList">
         { this.props.loading
-          ? "Loading..."
+          ? 'Loading...'
           : <div>
               <ul>
                 {this.props.data.map((item) =>

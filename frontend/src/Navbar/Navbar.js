@@ -4,7 +4,7 @@ import {
 } from 'react-bootstrap'
 
 export default class _Navbar extends Component {
-  render() {
+  render () {
     return (
       <Navbar>
         <div className='container-fluid'>

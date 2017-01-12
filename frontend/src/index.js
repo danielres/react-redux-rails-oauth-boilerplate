@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/css/bootstrap-theme.css'
 import './index.css'
 
-const rootEl = document.getElementById('root');
+const rootEl = document.getElementById('root')
 
 ReactDOM.render(
   <Provider store={store}>
