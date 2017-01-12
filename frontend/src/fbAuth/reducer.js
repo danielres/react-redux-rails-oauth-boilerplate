@@ -18,7 +18,7 @@ export default function auth (state = initialState, action) {
         ...state,
         isFetching: false,
         user: action.user,
-        isAuthenticated: true,
+        isAuthenticated: !!action.user.accessToken,
       }
     case types.LOGOUT:
       return initialState
