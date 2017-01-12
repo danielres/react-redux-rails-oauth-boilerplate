@@ -10,7 +10,9 @@ import TodoList from './TodoList/reducer'
 import fbAuth from './fbAuth/reducer'
 import TodoListSagas from './TodoList/sagas'
 
-const reduxWebtoolsBrowserExtension = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+const reduxWebtoolsBrowserExtension = window.__REDUX_DEVTOOLS_EXTENSION__ &&
+  window.__REDUX_DEVTOOLS_EXTENSION__() ||
+  ((s) => s)
 
 const sagaMiddleware = createSagaMiddleware()
 
