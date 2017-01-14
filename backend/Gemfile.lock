@@ -49,6 +49,10 @@ GEM
       declarative (>= 0.0.8, < 1.0.0)
       representable (>= 2.4.0, <= 3.1.0)
       uber
+    dotenv (2.1.1)
+    dotenv-rails (2.1.1)
+      dotenv (= 2.1.1)
+      railties (>= 4.0, < 5.1)
     erubis (2.7.0)
     ffi (1.9.14)
     globalid (0.3.7)
@@ -159,6 +163,7 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
+  dotenv-rails
   jbuilder (~> 2.5)
   listen (~> 3.0.5)
   minitest-rails
