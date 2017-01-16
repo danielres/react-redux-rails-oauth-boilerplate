@@ -6,7 +6,8 @@ const FacebookLoginButton = (props) =>
   <FacebookLogin
     appId={config.facebookAppId}
     autoLoad={false}
-    fields="name,email,picture"
+    fields={config.facebookFields}
+    scope={config.facebookScope}
     onClick={props.requestLogin}
     callback={props.receiveLogin}
     icon="fa-facebook"
