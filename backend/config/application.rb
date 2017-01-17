@@ -25,5 +25,6 @@ module Todolist1
       g.orm :active_record, primary_key_type: :uuid
     end
     config.autoload_paths << "#{Rails.root}/lib"
+    config.eager_load_paths << Rails.root.join('lib')
   end
 end
