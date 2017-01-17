@@ -2,6 +2,7 @@ class AuthController < ApplicationController
   protect_from_forgery except: :auth
 
   def auth
-    render json: User::FindOrCreateByProvider.(params).to_json
+    run User::FindOrCreateByProvider
+    render json: @model
   end
 end
