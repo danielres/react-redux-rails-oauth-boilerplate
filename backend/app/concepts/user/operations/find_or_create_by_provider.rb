@@ -5,7 +5,6 @@ class User::FindOrCreateByProvider < Trailblazer::Operation
     property :id
     property :profile
     property :auths
-    validates :id, presence: true
     validates :profile, presence: true
     validates :auths, presence: true
   end
