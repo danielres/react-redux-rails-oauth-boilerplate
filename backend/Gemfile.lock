@@ -41,7 +41,6 @@ GEM
     addressable (2.5.0)
       public_suffix (~> 2.0, >= 2.0.2)
     arel (7.1.4)
-    bcrypt (3.1.11)
     builder (3.2.2)
     byebug (9.0.6)
     concurrent-ruby (1.0.4)
@@ -68,10 +67,6 @@ GEM
       activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
     jwt (1.5.6)
-    knock (2.0)
-      bcrypt (~> 3.1)
-      jwt (~> 1.5)
-      rails (>= 4.2)
     koala (2.4.0)
       addressable
       faraday
@@ -190,7 +185,7 @@ DEPENDENCIES
   database_cleaner
   dotenv-rails
   jbuilder (~> 2.5)
-  knock
+  jwt
   koala (~> 2.2)
   listen (~> 3.0.5)
   minitest-rails
