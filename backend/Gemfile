@@ -19,6 +19,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'thor', '0.19.1'
 gem 'trailblazer-rails'
 gem "koala", "~> 2.2"
+gem "knock"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
