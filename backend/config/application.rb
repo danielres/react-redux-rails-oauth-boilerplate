@@ -24,5 +24,6 @@ module Todolist1
     config.generators do |g|
       g.orm :active_record, primary_key_type: :uuid
     end
+    config.autoload_paths << "#{Rails.root}/lib"
   end
 end
