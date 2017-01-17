@@ -44,6 +44,7 @@ GEM
     builder (3.2.2)
     byebug (9.0.6)
     concurrent-ruby (1.0.4)
+    database_cleaner (1.5.3)
     debug_inspector (0.0.2)
     declarative (0.0.8)
       uber (>= 0.0.15)
@@ -180,6 +181,7 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
+  database_cleaner
   dotenv-rails
   jbuilder (~> 2.5)
   koala (~> 2.2)
