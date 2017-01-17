@@ -1,3 +1,29 @@
 #!/bin/bash
+
 cd "$(dirname "$0")"
-git subtree push --prefix frontend heroku master
+
+function deploy_backend {
+  echo "============ deploying backend"
+  git subtree push --prefix backend heroku_backend master
+}
+
+function deploy_frontend {
+  echo "============ deploying frontend"
+  git subtree push --prefix frontend heroku_frontend master
+}
+
+function deploy_all {
+  deploy_backend
+  deploy_frontend
+}
+
+if [[ "$1" == "backend" ]]
+  then deploy_backend
+elif [[ "$1" == "frontend" ]]
+  then deploy_frontend
+elif [[ "$1" == "all" ]]
+  then deploy_all
+else
+  echo "usage: deploy frontend|backend|all"
+fi
+
