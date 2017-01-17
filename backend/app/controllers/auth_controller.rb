@@ -3,6 +3,6 @@ class AuthController < ApplicationController
 
   def auth
     run User::FindOrCreateByProvider
-    render json: @model
+    render json: UserRepresenter.new(@model)
   end
 end
