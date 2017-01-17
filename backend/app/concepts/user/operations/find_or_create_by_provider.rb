@@ -39,7 +39,7 @@ class User::FindOrCreateByProvider < Trailblazer::Operation
 
   def find_or_init_user_by_facebook(oauth_access_token)
     fb_user = FacebookApi.resolve_user(oauth_access_token)
-    user = User.where("auths -> 'facebook' ->> 'user_id' = ?", fb_user['id']).first
+    user = User.where("auths -> 'facebook' ->> 'id' = ?", fb_user['id']).first
     user.present? ? user : User.new(auths: {facebook: fb_user})
   end
 end
