@@ -78,6 +78,10 @@ GEM
     guard-minitest (2.4.6)
       guard-compat (~> 1.2)
       minitest (>= 3.0)
+    guard-rspec (4.7.3)
+      guard (~> 2.1)
+      guard-compat (~> 1.1)
+      rspec (>= 2.99.0, < 4.0)
     i18n (0.7.0)
     jbuilder (2.6.1)
       activesupport (>= 3.0.0, < 5.1)
@@ -159,6 +163,10 @@ GEM
     representable (3.0.2)
       declarative (~> 0.0.5)
       uber (>= 0.0.15, < 0.2.0)
+    rspec (3.5.0)
+      rspec-core (~> 3.5.0)
+      rspec-expectations (~> 3.5.0)
+      rspec-mocks (~> 3.5.0)
     rspec-core (3.5.4)
       rspec-support (~> 3.5.0)
     rspec-expectations (3.5.0)
@@ -227,6 +235,7 @@ DEPENDENCIES
   dotenv-rails
   guard
   guard-minitest
+  guard-rspec
   jbuilder (~> 2.5)
   jwt
   koala (~> 2.2)

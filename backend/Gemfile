@@ -27,6 +27,8 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'database_cleaner'
   gem "rspec-rails"
+  gem "guard"
+  gem "guard-rspec"
 end
 
 group :development do
