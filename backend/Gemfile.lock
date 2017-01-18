@@ -40,6 +40,7 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.5.0)
       public_suffix (~> 2.0, >= 2.0.2)
+    ansi (1.5.0)
     arel (7.1.4)
     builder (3.2.2)
     byebug (9.0.6)
@@ -87,6 +88,11 @@ GEM
     minitest-rails (3.0.0)
       minitest (~> 5.8)
       railties (~> 5.0)
+    minitest-reporters (1.1.13)
+      ansi
+      builder
+      minitest (>= 5.0)
+      ruby-progressbar
     multi_json (1.12.1)
     multipart-post (2.0.0)
     nio4r (1.2.1)
@@ -137,6 +143,7 @@ GEM
     representable (3.0.2)
       declarative (~> 0.0.5)
       uber (>= 0.0.15, < 0.2.0)
+    ruby-progressbar (1.8.1)
     spring (2.0.0)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
@@ -189,6 +196,7 @@ DEPENDENCIES
   koala (~> 2.2)
   listen (~> 3.0.5)
   minitest-rails
+  minitest-reporters
   pg (~> 0.18)
   puma (~> 3.0)
   rails (~> 5.0.0, >= 5.0.0.1)
