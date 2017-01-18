@@ -1,4 +1,4 @@
-require "test_helper"
+require "rails_helper"
 
 describe JsonWebToken do
   let(:payload) { {'foo' => 'foo'} }
@@ -6,6 +6,6 @@ describe JsonWebToken do
   it "can encode and decode a hash" do
     encoded = JsonWebToken.encode(payload)
     result = JsonWebToken.decode(encoded)
-    value(result).must_equal payload
+    expect(result).to eq(payload)
   end
 end
