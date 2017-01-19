@@ -1,11 +1,8 @@
 import url from 'url'
 import _ from 'lodash'
-import axios from 'axios'
-import Adapter from 'axios-mock-adapter'
+import mock from '../apiMockAdapter'
 
 export default () => {
-  const mock = new Adapter(axios)
-
   let startId = 1
 
   let items = [
