@@ -26,8 +26,8 @@ class User::FindOrCreateByProvider < Trailblazer::Operation
   end
 
   def find_or_init_user_by_provider(options)
-    oauth_access_token = options['params']['oauth_access_token']
-    raise "oauth_access_token missing" unless oauth_access_token
+    oauth_access_token = options['params']['oauthAccessToken']
+    raise "oauthAccessToken missing" unless oauth_access_token
     provider = options['params']['provider']
     raise "oauth provider missing" unless provider
     case provider

@@ -6,7 +6,7 @@ describe User::Authenticate do
     describe "access_token matches no user"  do
       let(:params){ {'access_token' => JsonWebToken.encode({'user_id' => SecureRandom.uuid})}}
       it 'raises an error' do
-        expect{ User::Authenticate.call(params) }.to raise_error "oauth_access_token missing"
+        expect{ User::Authenticate.call(params) }.to raise_error "oauthAccessToken missing"
       end
     end
 

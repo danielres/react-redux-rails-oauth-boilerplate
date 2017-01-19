@@ -1,14 +1,14 @@
 RSpec.shared_examples "User::FindOrCreateByProvider" do |parameter|
-  describe 'with oauth_access_token and provider' do
+  describe 'with oauthAccessToken and provider' do
     describe 'oauth provider missing' do
-      let(:params){ {'oauth_access_token' => 'XXXX'} }
+      let(:params){ {'oauthAccessToken' => 'XXXX'} }
       it 'raises an error' do
         expect{ User::Authenticate.call(params) }.to raise_error "oauth provider missing"
       end
     end
 
     describe 'with provider' do
-      let(:params){ {'oauth_access_token' => 'XXXX', 'provider' => 'facebook'} }
+      let(:params){ {'oauthAccessToken' => 'XXXX', 'provider' => 'facebook'} }
       it 'calls FacebookApi and creates a user, sets user#display_name' do
         allow(FacebookApi)
           .to receive(:resolve_user)
