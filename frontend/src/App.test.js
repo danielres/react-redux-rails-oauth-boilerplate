@@ -6,14 +6,16 @@ import FacebookLoginButton from './fbAuth/FacebookLoginButton/'
 
 describe('when user is authenticated', () => {
   it('renders a <TodoList /> component', () => {
-    const wrapper = shallow(<App fbAuth={{ isAuthenticated: true, user: { name: 'Tom' }}} />)
+    const wrapper = shallow(<App auth={
+      { isAuthenticated: true, user: { profile: { display_name: 'Tom' }}}
+    } />)
     expect(wrapper.find(TodoList).length).toEqual(1)
   })
 })
 
 describe('when user is not', () => {
   it('renders a <FacebookLoginButton /> component', () => {
-    const wrapper = shallow(<App fbAuth={{ isAuthenticated: false }} />)
+    const wrapper = shallow(<App auth={{ isAuthenticated: false }} />)
     expect(wrapper.find(FacebookLoginButton).length).toEqual(1)
   })
 })

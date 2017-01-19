@@ -8,12 +8,12 @@ const initialState = {
 
 export default function auth (state = initialState, action) {
   switch (action.type) {
-    case types.LOGIN_REQUEST:
+    case types.AUTH_REQUEST:
       return {
         ...state,
         isFetching: true,
       }
-    case types.LOGIN_SUCCESS:
+    case types.AUTH_SUCCESS:
       return {
         ...state,
         isFetching: false,

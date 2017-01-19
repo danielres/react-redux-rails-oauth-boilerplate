@@ -1,15 +1,15 @@
 import React, { PropTypes } from 'react'
 import { Button } from 'react-bootstrap'
 
-const FacebookLogoutButton = (props) =>
+const LogoutButton = (props) =>
   <Button
     onClick={props.logout}
   >
     Logout
   </Button>
 
-FacebookLogoutButton.propTypes = {
+LogoutButton.propTypes = {
   logout: PropTypes.func.isRequired,
 }
 
-export default FacebookLogoutButton
+export default LogoutButton

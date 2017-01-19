@@ -1,9 +1,7 @@
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import FacebookLogoutButton from './FacebookLogoutButton'
-import {
-  logout,
-} from '../actions'
+import { logout } from './actions'
+import LogoutButton from './LogoutButton'
 
 const mapStateToProps = (state) => ({
 })
@@ -16,4 +14,4 @@ const mapDispatchToProps = (dispatch) =>
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(FacebookLogoutButton)
+)(LogoutButton)

@@ -3,8 +3,7 @@ import { Navbar } from 'react-bootstrap'
 import TopNavbar from './Navbar/'
 import TodoList from './TodoList/'
 import FacebookLoginButton from './fbAuth/FacebookLoginButton/'
-import FacebookLogoutButton from './fbAuth/FacebookLogoutButton/'
-
+import LogoutButton from './LogoutButton/'
 import { connect } from 'react-redux'
 
 export class App extends Component {
@@ -12,21 +11,21 @@ export class App extends Component {
     const {
       isAuthenticated,
       user,
-    } = this.props.fbAuth
+    } = this.props.auth
 
     return (
       <div className="App">
         <TopNavbar>
           { isAuthenticated &&
             <Navbar.Form>
-              <FacebookLogoutButton />
+              <LogoutButton />
             </Navbar.Form>
           }
         </TopNavbar>
         { isAuthenticated
           ? <div>
               <div className="container text-center">
-                Welcome, {user.name} !
+                Welcome, {user.profile.display_name} !
               </div>
               <TodoList />
             </div>
@@ -40,7 +39,7 @@ export class App extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  fbAuth: state.fbAuth,
+  auth: state.auth,
 })
 
 const mapDispatchToProps = (dispatch) => ({
