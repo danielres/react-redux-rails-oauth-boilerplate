@@ -4,7 +4,7 @@ import apiMock from './api.mock'
 
 const { apiUrl } = config
 
-if (config.apiMock) {
+if (config.mockApis) {
   console.log('Api mock enabled for TodoList')
   apiMock()
 }
