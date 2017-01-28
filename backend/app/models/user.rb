@@ -19,4 +19,8 @@ class User < ApplicationRecord
   def access_token
     JsonWebToken.encode({user_id: id})
   end
+
+  def to_h
+    JSON.parse(to_json)
+  end
 end

@@ -11,7 +11,7 @@ RSpec.describe "find user by access_token", type: :request do
   end
 
   describe 'access token valid' do
-    it 'returns json with found user + code "ok"' do
+    it 'returns json with found user + accessToken + code "ok"' do
       user = Struct.new(:id, :access_token).new(123)
       allow(User).to receive(:find_by_access_token){ user }
 
@@ -19,6 +19,7 @@ RSpec.describe "find user by access_token", type: :request do
       expect(response.content_type).to eq("application/json")
       expect(response).to have_http_status(:ok)
       expect(JSON.parse(response.body)['id']).to eq(123)
+      expect(JSON.parse(response.body)['accessToken']).to eq(JsonWebToken.encode({id: 123}))
     end
   end
 end
@@ -45,13 +46,17 @@ RSpec.describe "find or create user by provider + oauthAccessToken", type: :requ
   end
 
   describe 'oauth succeeded' do
-    it 'returns json with found user + code "ok"' do
-      allow(User).to receive(:find_or_create_by_provider){ {foo: 'foo'} }
+    it 'returns json with found user + accessToken + code "ok"' do
+      allow(User).to receive(:find_or_create_by_provider) do
+        Struct.new(:id, :foo).new(1, 'foo')
+      end
 
       post "/auth/facebook", params: {oauthAccessToken: '_'}
       expect(response.content_type).to eq('application/json')
       expect(response).to have_http_status(:ok)
       expect(JSON.parse(response.body)['foo']).to eq('foo')
+      expect(JSON.parse(response.body)['accessToken'])
+        .to eq(JsonWebToken.encode({id: 1}))
     end
   end
 end
