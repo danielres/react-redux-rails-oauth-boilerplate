@@ -20,6 +20,13 @@ require 'webmock/rspec'
 WebMock.disable_net_connect!(allow_localhost: true)
 
 RSpec.configure do |config|
+  config.before(:each) do
+    stub_request(:get, /.*graph.facebook.com\/me.*/).
+     to_return(status: 200, body: "", headers: {})
+  end
+end
+
+RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
