@@ -22,3 +22,36 @@ RSpec.describe "find user by access_token", type: :request do
     end
   end
 end
+
+RSpec.describe "find or create user by provider + oauthAccessToken", type: :request do
+  describe 'provider not supported' do
+    it 'returns json with error + code "not_found"' do
+      post '/auth/whateverbook', params: {oauthAccessToken: '_'}
+      expect(response.content_type).to eq('application/json')
+      expect(response).to have_http_status(:not_found)
+      expect(response.body).to eq({error: 'not-found'}.to_json)
+    end
+  end
+
+  describe 'oauth failed' do
+    it 'returns json with error + code "not_found"' do
+      allow(User).to receive(:find_or_create_by_provider){ nil }
+
+      post '/auth/facebook'
+      expect(response.content_type).to eq('application/json')
+      expect(response).to have_http_status(:not_found)
+      expect(response.body).to eq({error: 'not-found'}.to_json)
+    end
+  end
+
+  describe 'oauth succeeded' do
+    it 'returns json with found user + code "ok"' do
+      allow(User).to receive(:find_or_create_by_provider){ {foo: 'foo'} }
+
+      post "/auth/facebook", params: {oauthAccessToken: '_'}
+      expect(response.content_type).to eq('application/json')
+      expect(response).to have_http_status(:ok)
+      expect(JSON.parse(response.body)['foo']).to eq('foo')
+    end
+  end
+end
