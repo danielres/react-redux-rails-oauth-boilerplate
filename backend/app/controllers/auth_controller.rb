@@ -1,6 +1,4 @@
 class AuthController < ApplicationController
-  protect_from_forgery except: :auth
-
   def auth_with_access_token
     user = User.find_by_access_token(params[:accessToken])
     if user
