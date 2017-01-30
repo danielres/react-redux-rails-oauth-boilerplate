@@ -1,6 +1,6 @@
 # react-redux-rails-oauth-boilerplate
 
-<img src="https://travis-ci.org/danielres/react-redux-rails-oauth-boilerplate.svg?branch=master" alt="build status" />
+<a href="https://travis-ci.org/danielres/react-redux-rails-oauth-boilerplate"><img src="https://travis-ci.org/danielres/react-redux-rails-oauth-boilerplate.svg?branch=master" alt="build status" /></a>
 
 An experimental boilerplate with decoupled frontend/backend apps, featuring React, Redux, Redux sagas, Rails 5, Trailblazer,... with token authentication and using Facebook as an auth provider.
 
