@@ -4,7 +4,7 @@ import {
   Navbar,
 } from 'react-bootstrap'
 
-import LogoutButton from '../LogoutButton/'
+import LogoutButton from './LogoutButton'
 
 const _Navbar = (props) =>
   <Navbar>

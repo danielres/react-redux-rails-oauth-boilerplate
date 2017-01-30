@@ -12,7 +12,7 @@ import fbAuth from './fbAuth/reducer'
 import auth from './auth/reducer'
 import TodoListSagas from './TodoList/sagas'
 import authSagas from './auth/sagas'
-import { types as logoutTypes } from './LogoutButton/actions'
+import { types as logoutTypes } from './Navbar/LogoutButton/actions'
 
 const reduxWebtoolsBrowserExtension = window.__REDUX_DEVTOOLS_EXTENSION__ &&
   window.__REDUX_DEVTOOLS_EXTENSION__() ||
