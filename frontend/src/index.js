@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import store from './store'
-import App from './App'
+import Router from './Router'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/css/bootstrap-theme.css'
 import './index.css'
@@ -11,17 +11,17 @@ const rootEl = document.getElementById('root')
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <Router />
   </Provider>,
   rootEl
 )
 
 if (module.hot) {
-  module.hot.accept('./App', () => {
-    const NextApp = require('./App').default
+  module.hot.accept('./Router', () => {
+    const NextRouter = require('./Router').default
     ReactDOM.render(
       <Provider store={store}>
-        <NextApp />
+        <NextRouter />
       </Provider>,
       rootEl
     )

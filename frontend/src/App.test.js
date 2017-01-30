@@ -1,21 +1,18 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import { App } from './App'
-import TodoList from './TodoList/'
 import FacebookLoginButton from './fbAuth/FacebookLoginButton/'
 
 describe('when user is authenticated', () => {
-  it('renders a <TodoList /> component', () => {
-    const wrapper = shallow(<App auth={
-      { isAuthenticated: true, user: { profile: { display_name: 'Tom' }}}
-    } />)
-    expect(wrapper.find(TodoList).length).toEqual(1)
+  it('does not render a <FacebookLoginButton /> component', () => {
+    const wrapper = shallow(<App isAuthenticated={true} />)
+    expect(wrapper.find(FacebookLoginButton).length).toEqual(0)
   })
 })
 
-describe('when user is not', () => {
+describe('when user is not authenticated', () => {
   it('renders a <FacebookLoginButton /> component', () => {
-    const wrapper = shallow(<App auth={{ isAuthenticated: false }} />)
+    const wrapper = shallow(<App isAuthenticated={false} />)
     expect(wrapper.find(FacebookLoginButton).length).toEqual(1)
   })
 })

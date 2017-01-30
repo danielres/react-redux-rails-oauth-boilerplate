@@ -5,6 +5,7 @@ import {
   applyMiddleware,
 } from 'redux'
 import createSagaMiddleware from 'redux-saga'
+import { routerReducer } from 'react-router-redux'
 import { fork } from 'redux-saga/effects'
 import TodoList from './TodoList/reducer'
 import fbAuth from './fbAuth/reducer'
@@ -28,6 +29,7 @@ const appReducer = combineReducers({
   TodoList,
   fbAuth,
   auth,
+  routing: routerReducer,
 })
 
 const rootReducer = (state, action) => {
