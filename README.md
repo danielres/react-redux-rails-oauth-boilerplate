@@ -6,6 +6,10 @@ An experimental boilerplate with decoupled frontend/backend apps, featuring Reac
 
 The spirit of this boilerplate is to provide the cleanest, most scalable possible base for developing a web app with its frontend and backend completely decoupled.
 
-It aims to achieve maximal decoupling and componentization, both in frontend and in backend. Therefore, files are grouped by feature, not by type.
+It aims to achieve maximal decoupling and componentization, both in frontend and in backend. Therefore, files are grouped by feature, not by type. 
 
 The backend aims to minimize its dependecy to Rails, by capturing the business logic into services (simple, stateless ruby classes, and Trailblazer-like operations), an by abstracting dependencies to specific libraries (ActiveRecord, Koala gem, ...)
+
+Resources:
+
+* Article explaining the Feature First pattern for code organization: [Organizing Large React Applications](http://engineering.kapost.com/2016/01/organizing-large-react-applications/)
