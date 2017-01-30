@@ -1,0 +1,19 @@
+language: node_js
+node_js:
+  - 7.2.1
+addons:
+  postgresql: "9.4"
+before_install:
+  - pwd
+  - rvm install 2.2.4
+  - gem install bundler
+  - nvm install 7.2.1
+install:
+  - cd frontend && npm install && cd ..
+  - cd backend && bundle && cd ..
+before_script:
+  - psql -c 'create database test_db;' -U postgres
+  - cp backend/config/database.travis.yml backend/config/database.yml
+script:
+  - cd frontend && npm test && cd ..
+  - cd backend && rspec && cd ..
