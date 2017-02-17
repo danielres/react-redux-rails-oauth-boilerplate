@@ -15,3 +15,36 @@ The backend aims to minimize its dependecy to Rails, by capturing the business l
 Resources:
 
 * Article explaining the Feature First pattern for code organization: [Organizing Large React Applications](http://engineering.kapost.com/2016/01/organizing-large-react-applications/)
+
+# Basic directions
+
+## Environment variables (mandatory step)
+
+Important configuration options are set through environment variables.
+The easiest way to define them is to use .env ([dotenv](https://www.npmjs.com/package/dotenv)) files.
+The frontend and the backend both need their separate .env files
+
+You need to create your own .env files, you can start by copying the example ones:
+
+```sh
+cp frontend/.env.example frontend/.env
+cp backend/.env.example backend/.env
+```
+
+Remember to edit these files with your own credentials and preferences.
+
+## Starting the frontend
+
+```sh
+$ cd frontend; npm run start
+```
+
+## Starting the backend
+
+```sh
+$ cd backend; rails s -p 3001
+```
+
+You can now navigate to http://localhost:3000, try the Facebook authentication and the provided example features like the todolist.
+
+
