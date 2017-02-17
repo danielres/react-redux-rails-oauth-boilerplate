@@ -2,6 +2,8 @@
 
 [Live demo](http://holap.herokuapp.com/)
 
+Note: Both frontend and backend in the demo run on free Heroku dynos, they might need some time to boot.
+
 <a href="https://travis-ci.org/danielres/react-redux-rails-oauth-boilerplate"><img src="https://travis-ci.org/danielres/react-redux-rails-oauth-boilerplate.svg?branch=master" alt="build status" /></a>
 
 An experimental boilerplate with decoupled frontend/backend apps, featuring React, Redux, Redux sagas, Rails 5, Trailblazer,... with token authentication and using Facebook as an auth provider.
@@ -21,7 +23,9 @@ Resources:
 ## Environment variables (mandatory step)
 
 Important configuration options are set through environment variables.
+
 The easiest way to define them is to use .env ([dotenv](https://www.npmjs.com/package/dotenv)) files.
+
 The frontend and the backend both need their separate .env files
 
 You need to create your own .env files, you can start by copying the example ones:
