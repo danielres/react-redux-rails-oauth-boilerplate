@@ -1,5 +1,7 @@
 # react-redux-rails-oauth-boilerplate
 
+**Warning: this code is not maintained, use at your own risk**
+
 [Live demo](http://holap.herokuapp.com/)
 
 Note: Both frontend and backend in the demo run on free Heroku dynos, they might need some time to boot.
