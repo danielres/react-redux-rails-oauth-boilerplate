@@ -15,25 +15,29 @@
   },
   "dependencies": {
     "@mars/heroku-js-runtime-env": "^3.0.0",
-    "axios": "^0.15.3",
-    "bootstrap": "^3.3.7",
-    "lodash": "^4.17.3",
-    "react": "^15.4.1",
+    "axios": "^0.21.3",
+    "bootstrap": "^3.4.1",
+    "lodash": "^4.17.21",
+    "react": "^16.5.0",
     "react-bootstrap": "^0.30.7",
-    "react-dom": "^15.4.1",
+    "react-dom": "^16.5.0",
     "react-facebook-login": "^3.4.2",
     "react-redux": "^5.0.1",
     "react-router": "^3.0.2",
     "react-router-redux": "^4.0.7",
     "redux": "^3.6.0",
     "redux-saga": "^0.14.0",
-    "redux-thunk": "^2.1.0"
+    "redux-thunk": "^2.1.0",
+    "@snyk/protect": "latest"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "lint": "eslint src/**/*.js",
     "test": "react-scripts test --env=jsdom --verbose",
-    "eject": "react-scripts eject"
-  }
+    "eject": "react-scripts eject",
+    "prepare": "yarn run snyk-protect",
+    "snyk-protect": "snyk-protect"
+  },
+  "snyk": true
 }
