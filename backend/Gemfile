@@ -2,13 +2,13 @@ source 'https://rubygems.org'
 ruby '2.2.4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
+gem 'rails', '~> 5.2.4', '>= 5.2.4.6'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
 # Use Puma as the app server
-gem 'puma', '~> 3.0'
+gem 'puma', '~> 4.3', '>= 4.3.9'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.5'
+gem 'jbuilder', '~> 2.6', '>= 2.6.4'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
@@ -17,29 +17,29 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'thor', '0.19.1'
-gem 'trailblazer-rails'
-gem "koala", "~> 2.2"
+gem 'trailblazer-rails', '>= 1.0.2'
+gem "koala", "~> 2.4", ">= 2.4.0"
 gem "jwt"
-gem 'rack-cors'
+gem 'rack-cors', '>= 1.0.5'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
-  gem 'dotenv-rails'
+  gem 'dotenv-rails', '>= 2.2.2'
   gem 'database_cleaner'
-  gem "rspec-rails"
+  gem "rspec-rails", ">= 3.5.2"
   gem "guard"
   gem "guard-rspec"
-  gem 'webmock'
+  gem 'webmock', '>= 2.3.2'
 end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
-  gem 'web-console'
+  gem 'web-console', '>= 3.4.0'
   gem 'listen', '~> 3.0.5'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'spring', '>= 2.0.0'
+  gem 'spring-watcher-listen', '~> 2.0.1'
   gem 'guard'
   gem 'guard-minitest'
 end
